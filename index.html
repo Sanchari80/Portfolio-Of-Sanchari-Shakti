@@ -413,6 +413,105 @@ section{padding:100px 64px;position:relative;}
 .ptag.c{border-color:rgba(34,211,238,0.18);color:rgba(34,211,238,0.6);}
 .ptag.g{border-color:rgba(52,211,153,0.18);color:rgba(52,211,153,0.6);}
 
+/* APP PROJECTS */
+#apps{background:var(--surface);border-bottom:1px solid var(--border2);}
+.app-card{
+  border:1px solid var(--border2);background:var(--card);
+  display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);
+  position:relative;overflow:hidden;
+}
+.app-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--acc),var(--acc2));
+  transform:scaleX(0);transition:transform 0.6s;transform-origin:left;
+}
+.app-card.visible::before,.app-card:hover::before{transform:scaleX(1);}
+
+/* left — phone mockup */
+.app-visual{
+  padding:52px 30px;display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(34,211,238,0.07) 0%,transparent 62%),
+    linear-gradient(160deg,rgba(139,92,246,0.06) 0%,transparent 70%);
+  border-right:1px solid var(--border2);
+}
+.phone{
+  width:206px;flex:none;background:#141428;border:2.5px solid #242444;
+  border-radius:28px;padding:11px 9px 15px;position:relative;
+  box-shadow:
+    0 0 0 1px rgba(139,92,246,0.25),
+    0 24px 60px rgba(0,0,0,0.6),
+    0 0 90px rgba(34,211,238,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.ph-notch{width:50px;height:5px;border-radius:3px;background:#1e1e3a;border:1px solid #2a2a4a;margin:0 auto 10px;}
+.ph-screen{
+  background:#0a0a16;border-radius:17px;overflow:hidden;
+  border:1px solid rgba(139,92,246,0.14);
+  font-family:'JetBrains Mono',monospace;
+}
+.ph-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 11px;border-bottom:1px solid rgba(139,92,246,0.12);
+  background:linear-gradient(135deg,rgba(139,92,246,0.14),rgba(34,211,238,0.06));
+}
+.ph-bar b{font-size:0.5rem;letter-spacing:0.03em;color:var(--text);font-weight:700;}
+.ph-live{display:flex;align-items:center;gap:4px;font-size:0.38rem;color:#34d399;letter-spacing:0.06em;}
+.ph-live i{width:4px;height:4px;border-radius:50%;background:#34d399;box-shadow:0 0 6px #34d399;animation:pulseDot 2s infinite;font-style:normal;}
+@keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:0.35;}}
+.ph-body{padding:11px;display:flex;flex-direction:column;gap:8px;}
+.ph-temp{
+  border:1px solid rgba(52,211,153,0.22);border-radius:8px;padding:11px 10px;
+  background:rgba(52,211,153,0.05);text-align:center;
+}
+.ph-temp .t{font-size:1.45rem;font-weight:800;color:#34d399;line-height:1;letter-spacing:-0.02em;}
+.ph-temp .l{font-size:0.38rem;color:var(--dim);letter-spacing:0.09em;margin-top:6px;display:block;}
+.ph-temp .s{font-size:0.38rem;color:#34d399;letter-spacing:0.07em;margin-top:3px;display:block;}
+.ph-row{
+  display:flex;align-items:center;justify-content:space-between;gap:6px;
+  padding:6px 8px;border:1px solid var(--border2);border-radius:5px;
+  font-size:0.39rem;letter-spacing:0.04em;color:var(--muted);
+}
+.ph-row em{font-style:normal;color:#34d399;}
+.ph-row.warn{border-color:rgba(251,191,36,0.24);background:rgba(251,191,36,0.05);color:#fbbf24;}
+.ph-hash{
+  font-size:0.35rem;color:var(--dim);letter-spacing:0.02em;
+  padding-top:3px;border-top:1px dashed rgba(139,92,246,0.14);
+  word-break:break-all;line-height:1.6;
+}
+
+/* right — details */
+.app-body{padding:46px 44px;display:flex;flex-direction:column;gap:12px;}
+.app-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.app-num{font-family:'JetBrains Mono',monospace;font-size:0.56rem;color:var(--dim);letter-spacing:0.08em;}
+.app-plat{display:flex;gap:5px;flex-wrap:wrap;}
+.app-name{font-size:1.75rem;font-weight:900;letter-spacing:-0.02em;line-height:1.1;color:var(--text);}
+.app-tag{
+  font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.05em;
+  color:var(--acc2);
+}
+.app-desc{font-size:0.72rem;line-height:1.9;color:var(--muted);}
+.app-feats{display:flex;flex-direction:column;gap:7px;margin-top:4px;}
+.app-feat{
+  display:flex;align-items:flex-start;gap:9px;
+  font-size:0.66rem;line-height:1.6;color:var(--muted);
+}
+.app-feat span{
+  font-family:'JetBrains Mono',monospace;font-size:0.6rem;
+  color:var(--acc2);flex:none;line-height:1.75;
+}
+.app-feat b{color:var(--text);font-weight:600;}
+.app-feat code{
+  font-family:'JetBrains Mono',monospace;font-size:0.58rem;
+  color:var(--acc2);background:rgba(34,211,238,0.1);padding:1px 6px;border-radius:3px;
+}
+.app-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.app-note{
+  font-family:'JetBrains Mono',monospace;font-size:0.54rem;
+  color:var(--dim);letter-spacing:0.04em;margin-top:10px;
+}
+.app-note em{font-style:normal;color:var(--acc2);}
+
 /* CERTIFICATES */
 #certificates{background:var(--surface);}
 .certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
@@ -545,6 +644,11 @@ footer{
   .projects-grid{grid-template-columns:1fr;}
   .proj-card[style*="span 2"]{grid-column:1!important;}
   .certs-grid{grid-template-columns:1fr;}
+  .app-card{grid-template-columns:1fr;}
+  .app-visual{padding:36px 22px;border-right:none;border-bottom:1px solid var(--border2);}
+  .app-body{padding:30px 22px;}
+  .app-links{flex-direction:column;}
+  .app-links .btn-p,.app-links .btn-g{text-align:center;}
 
   .laptop-wrap{max-width:min(320px,82vw);margin:0 auto;}
   .ft1,.ft2{display:none;}
@@ -666,6 +770,7 @@ footer{
     <li><a href="#skills">skills.json</a></li>
     <li><a href="#experience">work/</a></li>
     <li><a href="#projects">projects/</a></li>
+    <li><a href="#apps">apps.apk</a></li>
     <li><a href="#certificates">certs/</a></li>
     <li><a href="#hobbies">hobby.txt</a></li>
     <li><a href="#contact">contact.sh</a></li>
@@ -1024,10 +1129,83 @@ footer{
   </div>
 </section>
 
+<!-- APP PROJECTS -->
+<section id="apps">
+  <div class="sec-hdr reveal">
+    <span class="sec-label"><span class="slc">/*</span> <span class="sln">05</span> &mdash; app projects <span class="slc">*/</span></span>
+    <h2 class="sec-title">Apps I've<br><em>engineered</em></h2>
+  </div>
+
+  <div class="app-card reveal">
+
+    <div class="app-visual">
+      <div class="phone">
+        <div class="ph-notch"></div>
+        <div class="ph-screen">
+          <div class="ph-bar">
+            <b>ColdChain-Rx</b>
+            <span class="ph-live"><i></i> LIVE</span>
+          </div>
+          <div class="ph-body">
+            <div class="ph-temp">
+              <div class="t">2.4&deg;C</div>
+              <span class="l">VIAL #A-2291 &middot; INSULIN</span>
+              <span class="s">&#10003; IN RANGE 2&ndash;8&deg;C</span>
+            </div>
+            <div class="ph-row"><span>FHIR MedicationRequest</span><em>&#10003;</em></div>
+            <div class="ph-row"><span>RxNorm dose check</span><em>&#10003;</em></div>
+            <div class="ph-row warn"><span>Batch B-118</span><span>8.1&deg;C &#9650;</span></div>
+            <div class="ph-row"><span>AuditEvent logged</span><em>&#10003;</em></div>
+            <div class="ph-hash">sha256: 9f2b41c7e8a0d35b&hellip;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-body">
+      <div class="app-top">
+        <span class="app-num">// 01 &mdash; mobile + web</span>
+        <div class="app-plat">
+          <span class="ptag">Android</span><span class="ptag c">iOS</span><span class="ptag">Web</span>
+        </div>
+      </div>
+
+      <div class="app-name">ColdChain-Rx</div>
+      <div class="app-tag">Healthcare Logistics &middot; Cold-Chain Medication Tracking</div>
+
+      <p class="app-desc">A secure healthcare logistics system for <strong>hospital inpatient cold-chain medication tracking</strong> &mdash; keeping temperature-sensitive drugs like insulin and vaccines inside their safe range from pharmacy to bedside. Built with <strong>React Native (Expo)</strong> and <strong>Node.js</strong>, it speaks real hospital interoperability standards instead of a mock API: live EHR queries, drug-safety validation, and a tamper-evident audit trail.</p>
+
+      <div class="app-feats">
+        <div class="app-feat"><span>&#9656;</span><div><b>EHR Querying</b> via HL7 FHIR <code>MedicationRequest</code> resources</div></div>
+        <div class="app-feat"><span>&#9656;</span><div><b>Drug Dosage Validation</b> against the NIH RxNorm API</div></div>
+        <div class="app-feat"><span>&#9656;</span><div><b>Legacy HL7 v2 Parsing</b> &mdash; OMP^O09 pharmacy order messages</div></div>
+        <div class="app-feat"><span>&#9656;</span><div><b>HIPAA-compliant Push Notifications</b> with PHI stripped before dispatch</div></div>
+        <div class="app-feat"><span>&#9656;</span><div><b>SHA-256 Audit Trail</b> written as FHIR <code>AuditEvent</code> records</div></div>
+      </div>
+
+      <div class="ptags" style="margin-top:16px">
+        <span class="ptag">React Native</span><span class="ptag">Expo</span>
+        <span class="ptag c">Node.js</span><span class="ptag c">HL7 FHIR</span>
+        <span class="ptag">HL7 v2</span><span class="ptag">RxNorm API</span>
+        <span class="ptag g">HIPAA</span><span class="ptag g">SHA-256</span>
+      </div>
+
+      <div class="app-links">
+        <a class="btn-p" href="https://coldchain-rx.onrender.com" target="_blank" rel="noopener">live_demo()</a>
+        <a class="btn-g" href="https://github.com/Sanchari80/ColdChain-rx" target="_blank" rel="noopener">source_code</a>
+        <a class="btn-g" href="https://github.com/Sanchari80/ColdChain-rx/releases/download/v1.0.0/ColdChain-Rx-v1.0.0.apk" target="_blank" rel="noopener">&#8595; download_apk (v1.0.0)</a>
+      </div>
+
+      <p class="app-note">// <em>no install needed</em> &mdash; the live demo runs on any phone or computer. APK is for Android devices.</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- CERTIFICATES -->
 <section id="certificates">
   <div class="sec-hdr reveal">
-    <span class="sec-label"><span class="slc">/*</span> <span class="sln">05</span> &mdash; certificates <span class="slc">*/</span></span>
+    <span class="sec-label"><span class="slc">/*</span> <span class="sln">06</span> &mdash; certificates <span class="slc">*/</span></span>
     <h2 class="sec-title">Earned &amp;<br><em>recognized</em></h2>
   </div>
   <div class="certs-grid">
@@ -1119,7 +1297,7 @@ footer{
 <!-- HOBBIES -->
 <section id="hobbies">
   <div class="sec-hdr reveal">
-    <span class="sec-label"><span class="slc">/*</span> <span class="sln">06</span> &mdash; hobby <span class="slc">*/</span></span>
+    <span class="sec-label"><span class="slc">/*</span> <span class="sln">07</span> &mdash; hobby <span class="slc">*/</span></span>
     <h2 class="sec-title">Beyond<br><em>the screen</em></h2>
   </div>
   <div class="hobby-wrap reveal">
@@ -1201,7 +1379,7 @@ document.addEventListener('mousemove',e=>{
   cglow.style.left=gx+'px';cglow.style.top=gy+'px';
   requestAnimationFrame(ag);
 })();
-document.querySelectorAll('a,button,.sk-card,.proj-card,.cert-card,.iitem').forEach(el=>{
+document.querySelectorAll('a,button,.sk-card,.proj-card,.app-card,.cert-card,.iitem').forEach(el=>{
   el.addEventListener('mouseenter',()=>cur.classList.add('hov'));
   el.addEventListener('mouseleave',()=>cur.classList.remove('hov'));
 });
